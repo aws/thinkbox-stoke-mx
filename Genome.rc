@@ -1,0 +1,145 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource_genome.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource_genome.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GENOME DIALOGEX 0, 0, 108, 113
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Open Magma Editor",IDC_MAGMAMODIFIER_OPEN_BUTTON,2,2,92,18
+    CONTROL         "Auto Rename",IDC_MAGMAMODIFIER_AUTORENAME_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,33,55,10
+    COMBOBOX        IDC_MESH_ITERATION_PATTERN,2,69,104,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Remove Degenerate Faces",IDC_MAGMAMODIFIER_REMOVEDEGENERATE_CHECK,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,5,101,101,10
+    CONTROL         "Clamp Selection",IDC_MAGMAMODIFIER_CLAMPVERTSELECTION_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,90,66,10
+    CONTROL         "Auto Update",IDC_MAGMAMODIFIER_AUTOUPDATE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,22,55,10
+    LTEXT           "Iterate over:",IDC_STATIC,3,60,43,8
+    PUSHBUTTON      ">",IDC_GENOME_EDITORCONTEXT_BUTTON,94,2,12,18,BS_VCENTER
+    CONTROL         "",IDC_MAGMAMODIFIER_ITERATIONS_EDIT,"CustEdit",WS_TABSTOP,64,44,34,10
+    CONTROL         "",IDC_MAGMAMODIFIER_ITERATIONS_SPIN,"SpinnerControl",WS_TABSTOP,99,44,7,10
+    LTEXT           "Iterations:",IDC_STATIC,27,45,35,8
+END
+
+IDD_GENOME_ABOUT DIALOGEX 0, 0, 108, 46
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Open Online Help...",IDC_GENOMEABOUT_OPENHELP_BUTTON,2,14,104,14
+    CTEXT           "Version: #.#.##.####",IDC_GENOMEABOUT_VERSION_STATIC,2,3,104,8
+    PUSHBUTTON      "Open Log Window...",IDC_GENOMEABOUT_OPENLOG_BUTTON,2,28,104,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_GENOME, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 106
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_GENOME_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 106
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 44
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_GENOME_ABOUT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_LIBDESCRIPTION      "Genome geometry channel editor from Thinkbox Software"
+    IDS_CATEGORY            "Thinkbox"
+    IDS_CLASS_NAME          "Genome Modifier"
+    IDS_PARAMETERS          "Parameters"
+    IDS_MESH_ITERATION_PATTERN "MeshIterationPattern"
+    IDS_GENOME_MAINROLLOUT_TITLE "Genome Modifier"
+    IDS_CAMERA_PARAMETERS   "Camera Parameters"
+    IDS_PICK_CAMERA_PROMPT  "Pick Camera ..."
+    IDS_GENOME_MAGMAHOLDER  "Magma Holder"
+    IDS_GENOME_REMOVEDEGENERATE "Remove Degenerate Faces"
+    IDS_GENOME_CLAMPSELECTION "Clamp Vertex Selection"
+    IDS_GENOME_ABOUTROLLOUT_TITLE "Help"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+

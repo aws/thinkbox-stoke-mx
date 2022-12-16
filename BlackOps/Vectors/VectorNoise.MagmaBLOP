@@ -1,0 +1,113 @@
+(--MAGMAFLOW2--
+global MagmaFlowEditor_EditBLOPHistory = #()
+node2 = magmaNode.createNode "BLOP" 
+magmaNode.setNumNodeInputs node2 0 
+magmaNode.setNumNodeOutputs node2 1 
+magmaNode.setNodeProperty node2 "uiType" "BLOP"
+magmaNode.DeclareExtensionProperty node2 "BLOPOutputSocketName1"
+magmaNode.SetNodeProperty node2 "BLOPOutputSocketName1" "NoiseVector"
+magmaNode.DeclareExtensionProperty node2 "Name"
+magmaNode.SetNodeProperty node2 "Name" "VectorNoise"
+magmaNode.DeclareExtensionProperty node2 "Notes"
+magmaNode.SetNodeProperty node2 "Notes" "Creates a Vector Noise field based on the Position channel with customizable Size, Scale and Offset parameters. "
+magmaNode.DeclareExtensionProperty node2 "Position"
+magmaNode.SetNodeProperty node2 "Position" [550,90]
+magmaNode.DeclareExtensionProperty node2 "Selected"
+magmaNode.SetNodeProperty node2 "Selected" true
+--------------------------------------------
+magmaNode.PushEditableBLOP node2 
+node5 = magmaNode.createNode "InputChannel" 
+magmaNode.setNumNodeInputs node5 0 
+magmaNode.setNumNodeOutputs node5 1 
+magmaNode.setNodeProperty node5 "channelName" "Position"
+magmaNode.setNodeProperty node5 "channelType" ""
+magmaNode.DeclareExtensionProperty node5 "Position"
+magmaNode.SetNodeProperty node5 "Position" [300,160]
+--------------------------------------------
+node6 = magmaNode.createNode "Divide" 
+magmaNode.setNumNodeInputs node6 2 
+magmaNode.setNumNodeOutputs node6 1 
+magmaNode.setNodeInputDefaultValue node6 1 1.0
+magmaNode.setNodeInputDefaultValue node6 2 1.0
+magmaNode.DeclareExtensionProperty node6 "Position"
+magmaNode.SetNodeProperty node6 "Position" [570,160]
+--------------------------------------------
+node7 = magmaNode.createNode "InputValue" 
+magmaNode.setNumNodeInputs node7 0 
+magmaNode.setNumNodeOutputs node7 1 
+magmaNode.setNodeProperty node7 "forceInteger" false
+ctrl=bezier_float(); ctrl.value = 23.45
+magmaNode.setNodeProperty node7 "controller" ctrl
+magmaNode.DeclareExtensionProperty node7 "Exposed"
+magmaNode.SetNodeProperty node7 "Exposed" true
+magmaNode.DeclareExtensionProperty node7 "Name"
+magmaNode.SetNodeProperty node7 "Name" "Noise Size"
+magmaNode.DeclareExtensionProperty node7 "Position"
+magmaNode.SetNodeProperty node7 "Position" [430,230]
+--------------------------------------------
+node8 = magmaNode.createNode "Multiply" 
+magmaNode.setNumNodeInputs node8 2 
+magmaNode.setNumNodeOutputs node8 1 
+magmaNode.setNodeInputDefaultValue node8 1 1.0
+magmaNode.setNodeInputDefaultValue node8 2 1.0
+magmaNode.DeclareExtensionProperty node8 "Position"
+magmaNode.SetNodeProperty node8 "Position" [820,80]
+--------------------------------------------
+node9 = magmaNode.createNode "InputValue" 
+magmaNode.setNumNodeInputs node9 0 
+magmaNode.setNumNodeOutputs node9 1 
+magmaNode.setNodeProperty node9 "forceInteger" false
+ctrl=bezier_float(); ctrl.value = 30.0
+magmaNode.setNodeProperty node9 "controller" ctrl
+magmaNode.DeclareExtensionProperty node9 "Exposed"
+magmaNode.SetNodeProperty node9 "Exposed" true
+magmaNode.DeclareExtensionProperty node9 "Name"
+magmaNode.SetNodeProperty node9 "Name" "Noise Scale"
+magmaNode.DeclareExtensionProperty node9 "Position"
+magmaNode.SetNodeProperty node9 "Position" [690,190]
+--------------------------------------------
+node10 = magmaNode.createNode "VecNoise" 
+magmaNode.setNumNodeInputs node10 1 
+magmaNode.setNumNodeOutputs node10 1 
+magmaNode.setNodeProperty node10 "numOctaves" 4
+magmaNode.setNodeProperty node10 "lacunarity" 0.5
+magmaNode.setNodeProperty node10 "normalize" true
+magmaNode.DeclareExtensionProperty node10 "Name"
+magmaNode.SetNodeProperty node10 "Name" "VecNoise"
+magmaNode.DeclareExtensionProperty node10 "Position"
+magmaNode.SetNodeProperty node10 "Position" [690,110]
+--------------------------------------------
+node11 = magmaNode.createNode "Add" 
+magmaNode.setNumNodeInputs node11 2 
+magmaNode.setNumNodeOutputs node11 1 
+magmaNode.setNodeInputDefaultValue node11 1 0.0
+magmaNode.setNodeInputDefaultValue node11 2 0.0
+magmaNode.DeclareExtensionProperty node11 "Position"
+magmaNode.SetNodeProperty node11 "Position" [440,160]
+--------------------------------------------
+node12 = magmaNode.createNode "InputValue" 
+magmaNode.setNumNodeInputs node12 0 
+magmaNode.setNumNodeOutputs node12 1 
+magmaNode.setNodeProperty node12 "forceInteger" false
+ctrl=Point3_XYZ(); ctrl.value = [0,0,0]
+magmaNode.setNodeProperty node12 "controller" ctrl
+magmaNode.DeclareExtensionProperty node12 "Exposed"
+magmaNode.SetNodeProperty node12 "Exposed" true
+magmaNode.DeclareExtensionProperty node12 "Name"
+magmaNode.SetNodeProperty node12 "Name" "Noise Offset"
+magmaNode.DeclareExtensionProperty node12 "Position"
+magmaNode.SetNodeProperty node12 "Position" [300,210]
+--------------------------------------------
+try(magmaNode.setNodeInput node6 1 node11 1)catch()
+try(magmaNode.setNodeInput node6 2 node7 1)catch()
+try(magmaNode.setNodeInput node8 1 node10 1)catch()
+try(magmaNode.setNodeInput node8 2 node9 1)catch()
+try(magmaNode.setNodeInput node10 1 node6 1)catch()
+try(magmaNode.setNodeInput node11 1 node5 1)catch()
+try(magmaNode.setNodeInput node11 2 node12 1)catch()
+magmaNode.setOutput 1 node8 1
+magmaNode.PopEditableBLOP() 
+--------------------------------------------
+--------------------------------------------
+)
+

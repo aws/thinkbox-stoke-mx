@@ -1,0 +1,170 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: Apache-2.0
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource_pflow.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource_pflow.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_INACTIVE            BITMAP                  "Icons\\InactiveIcon.bmp"
+IDB_ACTIVE              BITMAP                  "Icons\\ActiveIcon.bmp"
+IDB_DEPOT_ICON          BITMAP                  "Icons\\DepotIcon.bmp"
+IDB_DEPOT_MASK          BITMAP                  "Icons\\DepotIconMask.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EMBERFOLLOW DIALOGEX 0, 0, 108, 412
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_EMBERFOLLOW_VELOCITYBLEND_EDIT,"CustEdit",WS_TABSTOP,53,60,34,10
+    CONTROL         "",IDC_EMBERFOLLOW_VELOCITYBLEND_SPIN,"SpinnerControl",WS_TABSTOP,88,60,7,10
+    RTEXT           "Blend:",IDC_STATIC3,30,61,21,8,0,WS_EX_RIGHT
+    CONTROL         "Custom1",IDC_VELOCITY_LOADER_NODE,"CustButton",WS_TABSTOP,1,9,95,21
+    LTEXT           "Field Node:",IDC_STATIC10,1,1,37,8
+    CONTROL         ">",IDC_EMBERFOLLOW_CONTEXTMENU,"CustButton",WS_TABSTOP,97,9,9,21
+    LTEXT           "%",IDC_STATIC,96,61,8,8
+    COMBOBOX        IDC_EMBERFOLLOW_VELOCITY_COMBO,3,45,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Velocity",IDC_STATIC,0,35,107,39
+    CONTROL         "",IDC_EMBERFOLLOW_ORIENTATIONBLEND_EDIT,"CustEdit",WS_TABSTOP,53,100,34,10
+    CONTROL         "",IDC_EMBERFOLLOW_ORIENTATIONBLEND_SPIN,"SpinnerControl",WS_TABSTOP,88,100,7,10
+    RTEXT           "Blend:",IDC_STATIC4,30,101,21,8,0,WS_EX_RIGHT
+    LTEXT           "%",IDC_STATIC,96,101,8,8
+    GROUPBOX        "Orientation",IDC_STATIC,0,75,107,39
+    CONTROL         "",IDC_EMBERFOLLOW_SPINBLEND_EDIT,"CustEdit",WS_TABSTOP,53,140,34,10
+    CONTROL         "",IDC_EMBERFOLLOW_SPINBLEND_SPIN,"SpinnerControl",WS_TABSTOP,88,140,7,10
+    RTEXT           "Blend:",IDC_STATIC5,30,141,21,8,0,WS_EX_RIGHT
+    LTEXT           "%",IDC_STATIC,96,141,8,8
+    GROUPBOX        "Spin",IDC_STATIC,0,115,107,39
+    CONTROL         "",IDC_EMBERFOLLOW_SCALEBLEND_EDIT,"CustEdit",WS_TABSTOP,53,180,34,10
+    CONTROL         "",IDC_EMBERFOLLOW_SCALEBLEND_SPIN,"SpinnerControl",WS_TABSTOP,88,180,7,10
+    RTEXT           "Blend:",IDC_STATIC6,30,181,21,8,0,WS_EX_RIGHT
+    LTEXT           "%",IDC_STATIC,96,181,8,8
+    GROUPBOX        "Scale",IDC_STATIC,0,155,107,39
+    COMBOBOX        IDC_EMBERFOLLOW_ORIENTATION_COMBO,3,85,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_EMBERFOLLOW_SPIN_COMBO,3,125,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_EMBERFOLLOW_SCALE_COMBO,3,165,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Selected",IDC_STATIC,0,195,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_SELECTED_COMBO,3,205,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Material ID",IDC_STATIC,0,279,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_MTLID_COMBO,3,289,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Script Integer",IDC_STATIC,0,307,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_SCRIPTINT_COMBO,3,317,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Script Float",IDC_STATIC,0,335,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_SCRIPTFLOAT_COMBO,3,345,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Script Vector",IDC_STATIC,0,363,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_SCRIPTVECTOR_COMBO,3,373,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Vertex Color",IDC_STATIC,0,223,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_VERTEXCOLOR_COMBO,3,233,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Texture Coord",IDC_STATIC,0,251,107,27
+    COMBOBOX        IDC_EMBERFOLLOW_TEXTURECOORD_COMBO,3,261,101,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_EMBERFOLLOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 101
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 405
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_CLASSNAME           "Stoke Field Follow"
+    IDS_CATEGORY            "Operator"
+    IDS_DESCRIPTION         "Assign particle velocities and other channels from a Stoke field"
+    IDS_PARAMETERS          "Parameters"
+    IDS_EMPTY_VOXELS        "No blending with empty voxels"
+    IDS_OBJECTNAME          "Stoke Field Follow "
+    IDS_VELOCITYBLENDPERCENT "Velocity Blend Percent"
+    IDS_SPINBLENDPERCENT    "Spin Blend Percent"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_VELOCITY_LOADER_NODE "Field Node"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

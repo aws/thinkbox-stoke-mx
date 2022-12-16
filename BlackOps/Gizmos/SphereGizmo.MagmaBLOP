@@ -1,0 +1,113 @@
+(--MAGMAFLOW2--
+global MagmaFlowEditor_EditBLOPHistory = #()
+node13 = magmaNode.createNode "BLOP" 
+magmaNode.setNumNodeInputs node13 1 
+magmaNode.setNumNodeOutputs node13 1 
+magmaNode.DeclareExtensionProperty node13 "BLOPInputSocketName1"
+magmaNode.SetNodeProperty node13 "BLOPInputSocketName1" "Object"
+magmaNode.DeclareExtensionProperty node13 "BLOPOutputSocketName1"
+magmaNode.SetNodeProperty node13 "BLOPOutputSocketName1" "InVolume (1.0 to 0.0)"
+magmaNode.DeclareExtensionProperty node13 "Name"
+magmaNode.SetNodeProperty node13 "Name" "SphereGizmo"
+magmaNode.DeclareExtensionProperty node13 "Position"
+magmaNode.SetNodeProperty node13 "Position" [631.4,227.1]
+magmaNode.DeclareExtensionProperty node13 "Selected"
+magmaNode.SetNodeProperty node13 "Selected" true
+--------------------------------------------
+magmaNode.PushEditableBLOP node13 
+node1 = magmaNode.createNode "Magnitude" 
+magmaNode.setNumNodeInputs node1 1 
+magmaNode.setNumNodeOutputs node1 1 
+magmaNode.DeclareExtensionProperty node1 "Position"
+magmaNode.SetNodeProperty node1 "Position" [576,222]
+--------------------------------------------
+node2 = magmaNode.createNode "ToWorld" 
+magmaNode.setNumNodeInputs node2 1 
+magmaNode.setNumNodeOutputs node2 1 
+magmaNode.setNodeProperty node2 "inputType" "Point"
+magmaNode.DeclareExtensionProperty node2 "Position"
+magmaNode.SetNodeProperty node2 "Position" [443,262]
+--------------------------------------------
+node3 = magmaNode.createNode "Divide" 
+magmaNode.setNumNodeInputs node3 2 
+magmaNode.setNumNodeOutputs node3 1 
+magmaNode.setNodeInputDefaultValue node3 1 1.0
+magmaNode.setNodeInputDefaultValue node3 2 1.0
+magmaNode.DeclareExtensionProperty node3 "Position"
+magmaNode.SetNodeProperty node3 "Position" [716,222]
+--------------------------------------------
+node4 = magmaNode.createNode "Clamp" 
+magmaNode.setNumNodeInputs node4 3 
+magmaNode.setNumNodeOutputs node4 1 
+magmaNode.setNodeInputDefaultValue node4 2 0.0
+magmaNode.setNodeInputDefaultValue node4 3 1.0
+magmaNode.DeclareExtensionProperty node4 "Position"
+magmaNode.SetNodeProperty node4 "Position" [851,188]
+--------------------------------------------
+node6 = magmaNode.createNode "Subtract" 
+magmaNode.setNumNodeInputs node6 2 
+magmaNode.setNumNodeOutputs node6 1 
+magmaNode.setNodeInputDefaultValue node6 1 1.0
+magmaNode.setNodeInputDefaultValue node6 2 0.0
+magmaNode.DeclareExtensionProperty node6 "Position"
+magmaNode.SetNodeProperty node6 "Position" [991,188]
+--------------------------------------------
+node8 = magmaNode.createNode "PropertyQuery" 
+magmaNode.setNumNodeInputs node8 1 
+magmaNode.setNumNodeOutputs node8 3 
+magmaNode.setNodeProperty node8 "properties" #("Center", "Center.x", "Max.x")
+magmaNode.DeclareExtensionProperty node8 "Position"
+magmaNode.SetNodeProperty node8 "Position" [373,213]
+--------------------------------------------
+node9 = magmaNode.createNode "Subtract" 
+magmaNode.setNumNodeInputs node9 2 
+magmaNode.setNumNodeOutputs node9 1 
+magmaNode.setNodeInputDefaultValue node9 1 1.0
+magmaNode.setNodeInputDefaultValue node9 2 0.0
+magmaNode.DeclareExtensionProperty node9 "Position"
+magmaNode.SetNodeProperty node9 "Position" [513,213]
+--------------------------------------------
+node10 = magmaNode.createNode "Abs" 
+magmaNode.setNumNodeInputs node10 1 
+magmaNode.setNumNodeOutputs node10 1 
+magmaNode.DeclareExtensionProperty node10 "Position"
+magmaNode.SetNodeProperty node10 "Position" [965,287]
+--------------------------------------------
+node11 = magmaNode.createNode "Subtract" 
+magmaNode.setNumNodeInputs node11 2 
+magmaNode.setNumNodeOutputs node11 1 
+magmaNode.setNodeInputDefaultValue node11 1 1.0
+magmaNode.setNodeInputDefaultValue node11 2 0.0
+magmaNode.DeclareExtensionProperty node11 "Position"
+magmaNode.SetNodeProperty node11 "Position" [513,213]
+--------------------------------------------
+node12 = magmaNode.createNode "InputChannel" 
+magmaNode.setNumNodeInputs node12 0 
+magmaNode.setNumNodeOutputs node12 1 
+magmaNode.setNodeProperty node12 "channelName" "Position"
+magmaNode.setNodeProperty node12 "channelType" ""
+magmaNode.DeclareExtensionProperty node12 "Position"
+magmaNode.SetNodeProperty node12 "Position" [373,263]
+--------------------------------------------
+try(magmaNode.setNodeInput node1 1 node11 1)catch()
+try(magmaNode.setNodeInput node2 1 node12 1)catch()
+try(magmaNode.setNodeInput node3 1 node1 1)catch()
+try(magmaNode.setNodeInput node3 2 node10 1)catch()
+try(magmaNode.setNodeInput node4 1 node3 1)catch()
+magmaNode.setNodeInput node4 2 -1 1 
+magmaNode.setNodeInput node4 3 -1 1 
+magmaNode.setNodeInput node6 1 -1 1 
+try(magmaNode.setNodeInput node6 2 node4 1)catch()
+magmaNode.setNodeInput node8 1 (magmaNode.GetNodeInput (magmaNode.CurrentBLOP) 1)[1] 1
+try(magmaNode.setNodeInput node9 1 node8 2)catch()
+try(magmaNode.setNodeInput node9 2 node8 3)catch()
+try(magmaNode.setNodeInput node10 1 node9 1)catch()
+try(magmaNode.setNodeInput node11 1 node8 1)catch()
+try(magmaNode.setNodeInput node11 2 node2 1)catch()
+magmaNode.setOutput 1 node6 1
+magmaNode.PopEditableBLOP() 
+--------------------------------------------
+try(magmaNode.setNodeInput node13 1 node7 1)catch()
+--------------------------------------------
+)
+
